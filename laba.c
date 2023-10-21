@@ -82,9 +82,9 @@ int main() {
     FILE* fileTime = fopen("Time.txt","w");
     FILE* fileSize = fopen("Size.txt","w");
 
-    int start = 3;
+    int startSize = 3;
     int maxSize = 5001;
-    for(int i = start; i < maxSize; i+=i/3){
+    for(int i = startSize; i < maxSize; i+=i/3){
         SIZE = i;
 
         double** matrix = matrixGenerator();
@@ -94,7 +94,7 @@ int main() {
         clock_t end = clock();
 
         time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-        
+
         fprintf(fileTime,"%f\n",time_spent);
         fprintf(fileSize,"%d\n",i);
     }
